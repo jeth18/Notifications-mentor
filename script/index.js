@@ -1,17 +1,16 @@
-import  {DATA} from '../data.js'
+import { DATA } from '../data.js'
 
 function addDataNotificaction(el) {
-  const section = document.getElementById('notifiactions-list')
+  const section = document.getElementById('notifications-list')
 
   const content = document.createElement('div')
-  content.className = 'notifiactions-card'
+  content.className = 'notifications-card'
 
   //imagen creada 
   const img = document.createElement('img')
   img.src = el.img
   img.className = 'img-card'
 
-  console.log(el.picture)
   //mensaje
   const div = document.createElement('div')
   const text = document.createElement('p')
@@ -25,27 +24,49 @@ function addDataNotificaction(el) {
   info.innerText= el.info + ' '
   text.appendChild(info)
 
-  const notifiactions = document.createElement('strong')
-  notifiactions.innerHTML = el.notification + ' '
-  text.appendChild(notifiactions)
+  const notifications = document.createElement('strong')
+  notifications.innerHTML = el.notification + ' '
+  text.appendChild(notifications)
+  if (el.group) notifications.className = 'group'
 
-  if(el.view) {
+  if (el.view) {
     const view = document.createElement('span')
     view.className = 'view'
     text.appendChild(view)
+    content.className = 'notifications-card no-view'
   }
-  //tiempo
+
   const time = document.createElement('span')
   time.innerText = el.time
-
+  time.className = 'time'
+  
   div.appendChild(text)
   div.appendChild(time)
 
-  content.appendChild(img)
-  content.appendChild(div)
+  const head = document.createElement('div')
+  head.appendChild(img)
+  head.appendChild(div)
+  head.className = 'd-row'
+
+  content.appendChild(head)
+
+  if (el.message) {
+    const message = document.createElement('div')
+    message.innerText = el.message
+    message.className = 'message'
+    content.appendChild(message)
+    content.className = 'notifications-card d-col'
+  }
+
+  if (el.picture) {
+    const picture = document.createElement('img')
+    picture.src = el.picture
+    picture.className = 'picture'
+    content.appendChild(picture)
+    content.className = 'notifications-card d-row j-content'
+  }
 
   section.appendChild(content)
-
 }
 
 function createElements() {

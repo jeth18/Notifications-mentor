@@ -22,6 +22,7 @@ export const DATA = [
     notification: 'Chess Club',
     time: '1 day ago',
     view: true,
+    group: true
   },
   {
     img: './assets/images/avatar-rizky-hasanuddin.webp',
@@ -30,7 +31,7 @@ export const DATA = [
     notification: '',
     time: '5 days ago',
     view: false,
-    //message
+    message: "Hello, thanks for setting up the Chess Club.I've been a member for a few weeks now and I'm already having lots of fun and improving my game"
   },
   {
     img: './assets/images/avatar-kimberly-smith.webp',
@@ -39,7 +40,7 @@ export const DATA = [
     notification: '',
     time: '1 week ago',
     view: false,
-    //picture
+    picture: './assets/images/image-chess.webp'
   },
   {
     img: './assets/images/avatar-nathan-peterson.webp',
@@ -48,7 +49,6 @@ export const DATA = [
     notification: '5 end-game strategies to increase your win rate',
     time: '2 weeks ago',
     view: false,
-    //picture
   },
   {
     img: './assets/images/avatar-anna-kim.webp',
@@ -57,6 +57,6 @@ export const DATA = [
     notification: 'Chess Club',
     time: '2 weeks ago',
     view: false,
-    picture: 'hi'
+    group: true
   },
 ]
